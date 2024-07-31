@@ -1,0 +1,27 @@
+<%- include ("partials/header.ejs") %>
+
+<% if (locals.adjective) { %>
+  <h1>
+    <%= adjective %>
+    <%= noun %>
+  </h1>
+<% } else { %>
+  <h1>Welcome to the Name Generator 🤟</h1>
+<% } %>
+<div class="form-container">
+  <form action="/submit-band" method="POST" class="form-item">
+    <input type="submit" value="Generate Band Name">
+  </form>
+</div>
+
+<div class="form-container">
+  <h2>Or</h2>
+</div>
+
+<div class="form-container">
+  <form action="/submit-name" method="POST" class="form-item">
+    <input type="text" name="name" placeholder="Generate Your Name" required>
+    <button type="submit">Submit</button>
+</div>
+
+<%- include ("partials/footer.ejs") %>
